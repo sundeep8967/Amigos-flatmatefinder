@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/ios_style_button.dart';
+import '../widgets/ios_navigation_bar.dart';
 import 'role_selection_screen.dart';
 
 class GenderSelectionScreen extends StatefulWidget {
@@ -17,15 +18,8 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: isDark ? Colors.white : Colors.black,
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        title: const Text('Step 1 of 3'),
+      appBar: const IOSNavigationBar(
+        title: 'Select Gender',
       ),
       body: SafeArea(
         child: Padding(
